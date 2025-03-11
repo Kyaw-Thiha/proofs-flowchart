@@ -1,10 +1,11 @@
 import { useCallback } from 'react';
 import { Handle, Node, NodeProps, Position } from '@xyflow/react';
 import { motion } from "motion/react";
+import { Button } from './ui/button';
 
 
 type expandableNodeData = { label: string };
-type expandableNode = Node<expandableNodeData, 'label'>;;
+type expandableNode = Node<expandableNodeData, 'expandableNode'>;;
 function expandableNode({ data, isConnectable }: NodeProps<expandableNode>) {
 
   return (
@@ -28,7 +29,8 @@ function expandableNode({ data, isConnectable }: NodeProps<expandableNode>) {
         isConnectable={isConnectable}
       />
       <div className='relative cursor-pointer'>
-        <div> Text: {data.label}</div>
+        <div> Text: {data.label}
+        </div>
 
         <motion.div className='absolute bg-white px-4 py-2 rounded-xl' whileHover={{ scale: 1.5 }}>
           Hey There!

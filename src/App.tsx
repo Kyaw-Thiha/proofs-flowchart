@@ -2,10 +2,12 @@ import { useCallback, useMemo, useState } from 'react'
 import './App.css'
 import { ReactFlow, Controls, Background, Node, Edge } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import expandableNode from './expandableNode';
+import ExpandableNode from "@/components/expandableNode";
 
-const edges: Edge[] = [{ id: '1-2', source: '1', target: '2', sourceHandle: 'bottom-center' }];
-
+const edges: Edge[] = [
+  { id: '1-2', source: '1', target: '2' },
+  { id: '1-3', source: '1', target: '3' }
+];
 const nodes: Node[] = [
   {
     id: '1',
@@ -19,11 +21,17 @@ const nodes: Node[] = [
     data: { label: 'World' },
     position: { x: 100, y: 100 },
   },
+  {
+    id: '3',
+    type: 'expandableNode',
+    data: { label: 'World' },
+    position: { x: -100, y: 100 },
+  },
 ];
 
 function App() {
   const [count, setCount] = useState(0)
-  const nodeTypes = useMemo(() => ({ expandableNode: expandableNode }), []);
+  const nodeTypes = useMemo(() => ({ expandableNode: ExpandableNode }), []);
 
   return (
     <div className='h-screen w-screen'>
