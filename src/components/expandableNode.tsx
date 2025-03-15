@@ -4,9 +4,14 @@ import { NodeProps, Position } from "@xyflow/react";
 import { BaseNode } from "@/components/base-node";
 import { BaseHandle } from "@/components/base-handle";
 import { motion } from "motion/react";
+import { NodeData, nodeTypes } from "./interface";
 import { cn } from "@/lib/utils";
 
-const ExpandableNode = memo(({ selected }: NodeProps) => {
+interface ExpandableNodeProps extends Omit<NodeProps, "data"> {
+  data: NodeData;
+}
+
+const ExpandableNode = memo(({ selected, data }: ExpandableNodeProps) => {
   const [isSeleted, setIsSelected] = useState(false);
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
@@ -25,11 +30,11 @@ const ExpandableNode = memo(({ selected }: NodeProps) => {
   }
 
   return (
-    <BaseNode selected={selected} onClick={toggleIsSelected}>
+    <BaseNode className={cn(data.nodeType == nodeTypes.defintion ? "rounded-[50%]" : "rounded-md")} selected={selected} onClick={toggleIsSelected}>
       <BaseHandle id="target-1" type="target" position={Position.Top} />
       <div className="flex flex-col" >
         <div className="cursor-pointer">
-          Base Node
+          {data.title}
         </div>
         <motion.div
           className="absolute bg-black z-10 rounded-xl border border-white px-4 py-4"

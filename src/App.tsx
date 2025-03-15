@@ -3,28 +3,33 @@ import './App.css'
 import { ReactFlow, Controls, Background, Node, Edge } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import ExpandableNode from "@/components/expandableNode";
+import { NodeData, nodeTypes, sections } from './components/interface';
+
+interface NodeInterface extends Omit<Node, "data"> {
+  data: NodeData;
+}
 
 const edges: Edge[] = [
   { id: '1-2', source: '1', target: '2' },
-  { id: '1-3', source: '1', target: '3' }
+  { id: '1-3', source: '1', target: '3' },
 ];
-const nodes: Node[] = [
+const nodes: NodeInterface[] = [
   {
     id: '1',
     type: 'expandableNode',
-    data: { label: 'Hello' },
+    data: { nodeType: nodeTypes.defintion, title: "Riemann Defn", claims: [], text: "", section: sections.riemann, toLearn: true },
     position: { x: 0, y: 0 },
   },
   {
     id: '2',
     type: 'expandableNode',
-    data: { label: 'World' },
+    data: { nodeType: nodeTypes.theorem, title: "Hi", claims: [], text: "", section: sections.riemann, toLearn: true },
     position: { x: 100, y: 100 },
   },
   {
     id: '3',
     type: 'expandableNode',
-    data: { label: 'World' },
+    data: { nodeType: nodeTypes.theorem, title: "Hi", claims: [], text: "", section: sections.riemann, toLearn: true },
     position: { x: -100, y: 100 },
   },
 ];
@@ -35,7 +40,7 @@ function App() {
 
   return (
     <div className='h-screen w-screen'>
-      <ReactFlow colorMode='dark' nodes={nodes} edges={edges} nodeTypes={nodeTypes}>
+      <ReactFlow colorMode='dark' nodes={nodes as unknown as Node[]} edges={edges} nodeTypes={nodeTypes}>
         <Background />
         {/* <Controls /> */}
       </ReactFlow>
