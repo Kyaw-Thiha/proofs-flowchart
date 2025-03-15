@@ -20,8 +20,10 @@ const ExpandableNode = memo(({ selected, data }: ExpandableNodeProps) => {
   const [opacity, setOpacity] = useState(0);
 
   const toggleIsSelected = () => {
-    setWidth(isSeleted ? 0 : 300);
-    setHeight(isSeleted ? 0 : 350);
+    // setWidth(isSeleted ? 0 : 300);
+    // setHeight(isSeleted ? 0 : 350);
+    setWidth(isSeleted ? 0 : 600);
+    // setHeight(isSeleted ? 0 : 450);
     setX(isSeleted ? 0 : 150);
     setY(isSeleted ? 0 : -75);
     setOpacity(isSeleted ? 0 : 1);
@@ -40,7 +42,7 @@ const ExpandableNode = memo(({ selected, data }: ExpandableNodeProps) => {
           className="absolute bg-black z-10 rounded-xl border border-white px-4 py-4"
           animate={{
             width: width,
-            height: height,
+            // height: height,
             opacity: opacity,
             x: x,
             y: y,
@@ -48,7 +50,13 @@ const ExpandableNode = memo(({ selected, data }: ExpandableNodeProps) => {
           transition={{ type: "spring" }}
           drag
         >
-          Hey
+          <h2 className="mb-4 text-center text-3xl">{data.title}</h2>
+          {
+            data.claims.map((claim) => {
+              return <h3>{claim}</h3>
+            })
+          }
+          <img src={data.text} alt={data.title} />
         </motion.div>
 
       </div>

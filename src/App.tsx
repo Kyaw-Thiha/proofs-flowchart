@@ -17,19 +17,19 @@ const nodes: NodeInterface[] = [
   {
     id: '1',
     type: 'expandableNode',
-    data: { nodeType: nodeTypes.defintion, title: "Riemann Defn", claims: [], text: "", section: sections.riemann, toLearn: true },
+    data: { nodeType: nodeTypes.defintion, title: "Riemann Definition", claims: [], text: "testing.png", section: sections.riemann, toLearn: true },
     position: { x: 0, y: 0 },
   },
   {
     id: '2',
     type: 'expandableNode',
-    data: { nodeType: nodeTypes.theorem, title: "Hi", claims: [], text: "", section: sections.riemann, toLearn: true },
+    data: { nodeType: nodeTypes.theorem, title: "Hi", claims: [], text: "testing.png", section: sections.riemann, toLearn: true },
     position: { x: 100, y: 100 },
   },
   {
     id: '3',
     type: 'expandableNode',
-    data: { nodeType: nodeTypes.theorem, title: "Hi", claims: [], text: "", section: sections.riemann, toLearn: true },
+    data: { nodeType: nodeTypes.theorem, title: "Hi", claims: [], text: "testing.png", section: sections.riemann, toLearn: true },
     position: { x: -100, y: 100 },
   },
 ];
