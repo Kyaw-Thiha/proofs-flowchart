@@ -40,7 +40,13 @@ export const generateEdges = (dataList: Array<Theorem>) => {
       const edge: Edge = {
         id: `${sourceId}-${nodeId}`,
         source: sourceId,
-        target: nodeId
+        target: nodeId,
+        type: "animatedSvgEdge",
+        data: {
+          duration: 2,
+          shape: "package",
+          path: "smoothstep",
+        },
       };
 
       edges.push(edge);

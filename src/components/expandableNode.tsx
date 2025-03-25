@@ -11,7 +11,7 @@ interface ExpandableNodeProps extends Omit<NodeProps, "data"> {
   data: NodeData;
 }
 
-const ExpandableNode = memo(({ selected, data }: ExpandableNodeProps) => {
+const ExpandableNode = memo(({ selected, zIndex, data }: ExpandableNodeProps) => {
   const [isSeleted, setIsSelected] = useState(false);
   const [width, setWidth] = useState(0);
   // const [height, setHeight] = useState(0);
@@ -36,7 +36,7 @@ const ExpandableNode = memo(({ selected, data }: ExpandableNodeProps) => {
       className={
         cn(data.nodeType == nodeTypes.defintion ? "rounded-[50%]" : "rounded-md",
           data.toLearn ? "border" : "border-dashed",
-          "dark:border-white",
+          "dark:border-white -z-10",
         )}
       selected={selected}
       onClick={toggleIsSelected}

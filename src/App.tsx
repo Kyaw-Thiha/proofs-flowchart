@@ -1,10 +1,11 @@
 import { useCallback, useMemo, useState } from 'react'
 import './App.css'
-import { ReactFlow, Controls, Background, Node, Edge } from '@xyflow/react';
+import { ReactFlow, Background, Node } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import ExpandableNode from "@/components/expandableNode";
 import { generateEdges, generateNodes } from '@/lib/dataToNode';
 import { mata37Data } from './data/mata37';
+import { AnimatedSvgEdge } from './components/animated-svg-edge';
 
 
 // const edges: Edge[] = [
@@ -37,10 +38,18 @@ const nodes = generateNodes(mata37Data);
 function App() {
   const [count, setCount] = useState(0)
   const nodeTypes = useMemo(() => ({ expandableNode: ExpandableNode }), []);
+  const edgeTypes = useMemo(() => ({ animatedSvgEdge: AnimatedSvgEdge }), []);
 
   return (
     <div className='h-screen w-screen'>
-      <ReactFlow colorMode='dark' nodes={nodes as unknown as Node[]} edges={edges} nodeTypes={nodeTypes}>
+      <ReactFlow
+        colorMode='dark'
+        nodes={nodes as unknown as Node[]}
+        edges={edges}
+        nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
+        fitView
+      >
         <Background />
         {/* <Controls /> */}
       </ReactFlow>

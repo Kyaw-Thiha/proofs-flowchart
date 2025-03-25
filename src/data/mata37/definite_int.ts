@@ -16,7 +16,7 @@ export const riemannIntegrable: Theorem = {
   image: "/mata37/definite_int/riemann_integrable.webp",
   section: sections.definite_int,
   toLearn: true,
-  x: 600,
+  x: 900,
   y: 300,
   connectedTo: [definiteIntegral],
 }
