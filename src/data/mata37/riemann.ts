@@ -24,7 +24,7 @@ export const riemannDefinitionB: Theorem = {
   title: "Riemann Definition B",
   image: "/mata37/riemann/riemann_defn.png",
   section: sections.riemann,
-  toLearn: true,
+  toLearn: false,
   x: 600,
   y: 150,
   connectedTo: [riemannDefinition],

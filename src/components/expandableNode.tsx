@@ -32,7 +32,15 @@ const ExpandableNode = memo(({ selected, data }: ExpandableNodeProps) => {
   }
 
   return (
-    <BaseNode className={cn(data.nodeType == nodeTypes.defintion ? "rounded-[50%]" : "rounded-md")} selected={selected} onClick={toggleIsSelected}>
+    <BaseNode
+      className={
+        cn(data.nodeType == nodeTypes.defintion ? "rounded-[50%]" : "rounded-md",
+          data.toLearn ? "border" : "border-dashed",
+          "dark:border-white",
+        )}
+      selected={selected}
+      onClick={toggleIsSelected}
+    >
       <BaseHandle id="target-1" type="target" position={Position.Top} />
       <div className="flex flex-col" >
         <div className="cursor-pointer">
