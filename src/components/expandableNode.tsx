@@ -14,7 +14,7 @@ interface ExpandableNodeProps extends Omit<NodeProps, "data"> {
 const ExpandableNode = memo(({ selected, data }: ExpandableNodeProps) => {
   const [isSeleted, setIsSelected] = useState(false);
   const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  // const [height, setHeight] = useState(0);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const [opacity, setOpacity] = useState(0);
@@ -51,12 +51,12 @@ const ExpandableNode = memo(({ selected, data }: ExpandableNodeProps) => {
           drag
         >
           <h2 className="mb-4 text-center text-3xl">{data.title}</h2>
-          {
-            data.claims.map((claim) => {
-              return <h3>{claim}</h3>
-            })
-          }
-          <img src={data.text} alt={data.title} />
+          {/* { */}
+          {/*   data.claims.map((claim) => { */}
+          {/*     return <h3>{claim}</h3> */}
+          {/*   }) */}
+          {/* } */}
+          <img src={data.image} alt={data.title} />
         </motion.div>
 
       </div>

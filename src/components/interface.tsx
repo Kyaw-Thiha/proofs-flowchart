@@ -15,8 +15,7 @@ export enum sections {
 export interface NodeData {
   nodeType: nodeTypes;
   title: string;
-  claims: Array<string>; // This will not be used for definitions
-  text: string;
+  image: string;
   section: sections;
   toLearn: boolean;
 }
