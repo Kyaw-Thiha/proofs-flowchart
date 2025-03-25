@@ -4,7 +4,7 @@ import { NodeProps, Position } from "@xyflow/react";
 import { BaseNode } from "@/components/base-node";
 import { BaseHandle } from "@/components/base-handle";
 import { motion } from "motion/react";
-import { NodeData, nodeTypes } from "./interface";
+import { NodeData, nodeTypes } from "@/lib/interface";
 import { cn } from "@/lib/utils";
 
 interface ExpandableNodeProps extends Omit<NodeProps, "data"> {

@@ -1,3 +1,5 @@
+import { Node } from '@xyflow/react';
+
 export enum nodeTypes {
   defintion,
   theorem,
@@ -20,3 +22,17 @@ export interface NodeData {
   toLearn: boolean;
 }
 
+export interface Theorem {
+  title: string;
+  image: string;
+  section: sections;
+  toLearn: boolean;
+  x: number,
+  y: number,
+  connectedTo: Array<Theorem>
+}
+
+export interface NodeInterface extends Omit<Node, "data"> {
+  data: NodeData;
+}
+export type { Edge } from '@xyflow/react';
