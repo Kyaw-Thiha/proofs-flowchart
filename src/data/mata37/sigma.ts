@@ -1,12 +1,14 @@
-import { sections, Theorem } from "@/lib/interface";
+import { sections, Theorem, xInterval, yInterval } from "@/lib/interface";
+
+const xFactor = 0;
 
 export const sequence: Theorem = {
   title: "Sequence",
   image: "/mata37/sigma/sequence.webp",
   section: sections.sigma,
   toLearn: true,
-  x: 0,
-  y: 0,
+  x: xInterval * xFactor,
+  y: yInterval * 0,
   connectedTo: [],
 }
 
@@ -15,8 +17,8 @@ export const sigmaNotation: Theorem = {
   image: "/mata37/sigma/sigma_notation.webp",
   section: sections.sigma,
   toLearn: true,
-  x: 0,
-  y: 150,
+  x: xInterval * xFactor,
+  y: yInterval * 1,
   connectedTo: [sequence],
 }
 
@@ -25,7 +27,7 @@ export const propertiesOfSigmaNotation: Theorem = {
   image: "/mata37/sigma/properties_of_sigma_notation.webp",
   section: sections.sigma,
   toLearn: true,
-  x: 0,
-  y: 300,
+  x: xInterval * xFactor,
+  y: yInterval * 2,
   connectedTo: [sigmaNotation],
 }

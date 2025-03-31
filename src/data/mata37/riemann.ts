@@ -1,4 +1,4 @@
-import { sections, Theorem } from "@/lib/interface";
+import { sections, Theorem, xInterval, yInterval } from "@/lib/interface";
 import { sigmaNotation } from "./sigma";
 
 // export const riemannDefinition: Theorem = {
@@ -32,14 +32,15 @@ import { sigmaNotation } from "./sigma";
 // }
 //
 
+const xFactor = 1;
 
 export const partition: Theorem = {
   title: "Partition",
   image: "/mata37/riemann/partition.webp",
   section: sections.riemann,
   toLearn: true,
-  x: 300,
-  y: 0,
+  x: xInterval * xFactor,
+  y: yInterval * 0,
   connectedTo: [],
 }
 
@@ -48,8 +49,8 @@ export const riemannPartition: Theorem = {
   image: "/mata37/riemann/partition.webp",
   section: sections.riemann,
   toLearn: true,
-  x: 300,
-  y: 150,
+  x: xInterval * xFactor,
+  y: yInterval * 1,
   connectedTo: [partition],
 }
 
@@ -58,8 +59,8 @@ export const riemannSum: Theorem = {
   image: "/mata37/riemann/riemann_sum.webp",
   section: sections.riemann,
   toLearn: true,
-  x: 300,
-  y: 300,
+  x: xInterval * xFactor,
+  y: yInterval * 2,
   connectedTo: [sigmaNotation, riemannPartition],
 }
 
@@ -68,8 +69,8 @@ export const leftRightMidpointSums: Theorem = {
   image: "/mata37/riemann/left_right_midpoint_sums.webp",
   section: sections.riemann,
   toLearn: true,
-  x: 300,
-  y: 450,
+  x: xInterval * xFactor,
+  y: yInterval * 3,
   connectedTo: [riemannSum],
 }
 

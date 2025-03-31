@@ -1,5 +1,8 @@
 import { Node } from '@xyflow/react';
 
+export const xInterval = 300;
+export const yInterval = 150;
+
 export enum nodeTypes {
   defintion,
   theorem,
