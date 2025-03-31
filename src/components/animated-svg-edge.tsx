@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import type { Edge, EdgeProps, Position } from "@xyflow/react";
 import {
   BaseEdge,
@@ -59,6 +59,8 @@ export function AnimatedSvgEdge({
   targetY,
   sourcePosition,
   targetPosition,
+  markerEnd,
+  style,
   data = {
     duration: 2,
     direction: "forward",
@@ -89,7 +91,7 @@ export function AnimatedSvgEdge({
 
   return (
     <>
-      <BaseEdge id={id} path={path} {...delegated} />
+      <BaseEdge id={id} path={path} markerEnd={markerEnd} {...delegated} />
       <Shape animateMotionProps={animateMotionProps} />
     </>
   );
@@ -121,6 +123,23 @@ const shapes = {
       <animateMotion {...animateMotionProps} />
     </g>
   ),
+
+  arrow: ({ animateMotionProps }) => (
+    <g transform="translate(0.000000,9.000000) scale(0.100000,-0.100000)"
+      fill="#000000" stroke="none">
+      <animateMotion {...animateMotionProps} />
+    </g>
+  ),
+
+  // package: ({ animateMotionProps }) => (
+  //   <g version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+  //     <path d="M0 0 C3.3 0 6.6 0 10 0 C10 3.3 10 6.6 10 10 C13.3 10 16.6 10 20 10 C20 13.3 20 16.6 20 20 C16.7 20 13.4 20 10 20 C10 23.3 10 26.6 10 30 C6.7 30 3.4 30 0 30 C0 26.7 0 23.4 0 20 C-23.1 20 -46.2 20 -70 20 C-70 16.7 -70 13.4 -70 10 C-46.9 10 -23.8 10 0 10 C0 6.7 0 3.4 0 0 Z " fill="#CBDBFC" transform="translate(70,30)" />
+  //     <path d="M0 0 C3.3 0 6.6 0 10 0 C10 3.3 10 6.6 10 10 C6.7 10 3.4 10 0 10 C0 6.7 0 3.4 0 0 Z " fill="#CBDBFC" transform="translate(60,60)" />
+  //     <path d="M0 0 C3.3 0 6.6 0 10 0 C10 3.3 10 6.6 10 10 C6.7 10 3.4 10 0 10 C0 6.7 0 3.4 0 0 Z " fill="#CBDBFC" transform="translate(60,20)" />
+  //     <animateMotion {...animateMotionProps} />
+  //   </g>
+  // ),
+
 } satisfies Record<string, AnimatedSvg>;
 
 /**

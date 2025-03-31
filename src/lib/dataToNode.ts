@@ -1,3 +1,4 @@
+import { MarkerType } from "@xyflow/react";
 import { Edge, NodeInterface, nodeTypes, Theorem } from "./interface";
 
 export const generateNodes = (dataList: Array<Theorem>) => {
@@ -42,6 +43,9 @@ export const generateEdges = (dataList: Array<Theorem>) => {
         source: sourceId,
         target: nodeId,
         type: "animatedSvgEdge",
+        markerEnd: {
+          type: MarkerType.Arrow,
+        },
         data: {
           duration: 2,
           shape: "package",
