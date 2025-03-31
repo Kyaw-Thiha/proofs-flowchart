@@ -1,4 +1,4 @@
-function topologicalSortWithLevels(graph: Record<string, string[]>): Record<string, number> {
+export function topologicalSortWithLevels(graph: Record<string, string[]>): Record<string, number> {
   const inDegree: Record<string, number> = {};
   const level: Record<string, number> = {};
   const queue: string[] = [];
