@@ -5,7 +5,7 @@ import { NodeProps, Position, useReactFlow } from "@xyflow/react";
 import { BaseNode } from "@/components/base-node";
 import { BaseHandle } from "@/components/base-handle";
 import { motion } from "motion/react";
-import { NodeData, nodeTypes } from "@/lib/interface";
+import { NodeData, nodeTypes, sections } from "@/lib/interface";
 import { cn } from "@/lib/utils";
 
 
@@ -48,12 +48,36 @@ const ExpandableNode = memo(({ selected, data, id }: ExpandableNodeProps) => {
   }, []);
   const targetElement = document.getElementsByClassName("react-flow__container")[0];
 
+  const getColor = (section: sections) => {
+    switch (section) {
+      case sections.sigma:
+        return "bg-green-800";
+      case sections.riemann:
+        return "bg-yellow-600";
+      case sections.definite_int:
+        return "bg-cyan-600";
+      case sections.a31:
+        return "bg-gray-600";
+      case sections.darboux:
+        return "bg-teal-600";
+      case sections.ftoc:
+        return "bg-purple-700";
+      case sections.int_techniques:
+        return "bg-orange-900";
+      case sections.uniformly_continuous:
+        return "bg-rose-500";
+      default:
+        console.log(`Sorry, you are wrong.`);
+    }
+  }
+
 
   return (
     <BaseNode
       className={
         cn(data.nodeType == nodeTypes.theorem ? "rounded-[50%]" : "rounded-md",
           data.toLearn ? "border" : "border-dashed",
+          getColor(data.section),
           "dark:border-white",
         )}
       selected={selected}
@@ -67,7 +91,7 @@ const ExpandableNode = memo(({ selected, data, id }: ExpandableNodeProps) => {
         {targetElement &&
           createPortal(
             <motion.div
-              className="absolute bg-black z-10 rounded-xl border border-white px-4 py-4 pointer-events-auto"
+              className={cn("absolute bg-black z-10 rounded-xl border border-white px-4 py-4 pointer-events-auto cursor-pointer", getColor(data.section))}
               onPointerDown={handlePointerDown} // Stops React Flow panning
               onDragStart={() => setIsDragging(true)}
               onDragEnd={() => setTimeout(() => setIsDragging(false), 100)} // Small delay to prevent flicker

@@ -91,7 +91,7 @@ export function AnimatedSvgEdge({
 
   return (
     <>
-      <BaseEdge id={id} path={path} markerEnd={markerEnd} {...delegated} />
+      <BaseEdge id={id} path={path} markerEnd={markerEnd} style={style} {...delegated} />
       <Shape animateMotionProps={animateMotionProps} />
     </>
   );

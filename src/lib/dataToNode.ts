@@ -45,6 +45,13 @@ export const generateEdges = (dataList: Array<Theorem>) => {
         type: "animatedSvgEdge",
         markerEnd: {
           type: MarkerType.Arrow,
+          width: 20,
+          height: 20,
+          color: '#FFFFFF',
+        },
+        style: {
+          strokeWidth: 2,
+          stroke: '#FFFFFF',
         },
         data: {
           duration: 2,
