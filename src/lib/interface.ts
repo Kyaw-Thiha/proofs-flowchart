@@ -17,18 +17,19 @@ export enum sections {
   int_techniques,
   improper_int,
   a31,
+  uniformly_continuous
 }
 export interface NodeData {
   nodeType: nodeTypes;
   title: string;
-  image: string;
+  image: string[];
   section: sections;
   toLearn: boolean;
 }
 
 export interface Theorem {
   title: string;
-  image: string;
+  image: string[];
   section: sections;
   toLearn: boolean;
   x: number,

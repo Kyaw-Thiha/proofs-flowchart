@@ -52,7 +52,7 @@ const ExpandableNode = memo(({ selected, data, id }: ExpandableNodeProps) => {
   return (
     <BaseNode
       className={
-        cn(data.nodeType == nodeTypes.defintion ? "rounded-[50%]" : "rounded-md",
+        cn(data.nodeType == nodeTypes.theorem ? "rounded-[50%]" : "rounded-md",
           data.toLearn ? "border" : "border-dashed",
           "dark:border-white",
         )}
@@ -82,7 +82,11 @@ const ExpandableNode = memo(({ selected, data, id }: ExpandableNodeProps) => {
               drag
             >
               <h2 className="mb-4 text-center text-3xl dark:text-white">{data.title}</h2>
-              <img src={data.image} alt={data.title} />
+              {
+                data.image.map((image) => (
+                  <img src={image} alt={image} />
+                ))
+              }
             </motion.div>, targetElement
           )
         }

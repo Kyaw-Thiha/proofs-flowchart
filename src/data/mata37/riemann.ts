@@ -5,7 +5,7 @@ const xFactor = 1;
 
 export const partition: Theorem = {
   title: "Partition",
-  image: "/mata37/riemann/partition.webp",
+  image: ["/mata37/riemann/partition.webp"],
   section: sections.riemann,
   toLearn: true,
   x: xInterval * xFactor,
@@ -15,7 +15,7 @@ export const partition: Theorem = {
 
 export const riemannPartition: Theorem = {
   title: "Riemann Partition",
-  image: "/mata37/riemann/partition.webp",
+  image: ["/mata37/riemann/partition.webp"],
   section: sections.riemann,
   toLearn: true,
   x: xInterval * xFactor,
@@ -25,7 +25,7 @@ export const riemannPartition: Theorem = {
 
 export const riemannSum: Theorem = {
   title: "Riemann Sum",
-  image: "/mata37/riemann/riemann_sum.webp",
+  image: ["/mata37/riemann/riemann_sum.webp"],
   section: sections.riemann,
   toLearn: true,
   x: xInterval * xFactor,
@@ -35,7 +35,7 @@ export const riemannSum: Theorem = {
 
 export const leftRightMidpointSums: Theorem = {
   title: "Left, Right, Midpoint Sums",
-  image: "/mata37/riemann/left_right_midpoint_sums.webp",
+  image: ["/mata37/riemann/left_right_midpoint_sums.webp"],
   section: sections.riemann,
   toLearn: true,
   x: xInterval * xFactor,
