@@ -16,6 +16,7 @@ export enum sections {
   ftoc,
   int_techniques,
   improper_int,
+  a31,
 }
 export interface NodeData {
   nodeType: nodeTypes;

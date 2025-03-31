@@ -1,4 +1,6 @@
-import { definiteIntegral, riemannIntegrable } from "./definite_int";
+import { bounded, lupAndGlp } from "./a31";
+import { darbouxIntegrable, darbouxIntegral, upperLowerSum } from "./darboux";
+import { definiteIntegral, definiteIntegralProperty, riemannIntegrable } from "./definite_int";
 import { leftRightMidpointSums, partition, riemannPartition, riemannSum } from "./riemann";
 import { propertiesOfSigmaNotation, sequence, sigmaNotation } from "./sigma";
 
@@ -18,7 +20,17 @@ export const mata37Data = [
 
   // Definite Integral
   definiteIntegral,
+  definiteIntegralProperty,
   riemannIntegrable,
+
+  // A31
+  bounded,
+  lupAndGlp,
+
+  // Darboux Integral
+  upperLowerSum,
+  darbouxIntegral,
+  darbouxIntegrable,
 ]
 
 

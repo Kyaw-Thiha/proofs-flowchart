@@ -1,16 +1,26 @@
 import { sections, Theorem, xInterval, yInterval } from "@/lib/interface";
 import { riemannSum } from "./riemann";
+import { bounded } from "./a31";
 
-const xFactor = 2;
 
 export const definiteIntegral: Theorem = {
   title: "Definite Integral",
   image: "/mata37/definite_int/definite_integral.webp",
   section: sections.definite_int,
   toLearn: true,
-  x: xInterval * xFactor,
-  y: yInterval * 0,
-  connectedTo: [riemannSum],
+  x: xInterval * 2,
+  y: yInterval * 2,
+  connectedTo: [riemannSum, bounded],
+}
+
+export const definiteIntegralProperty: Theorem = {
+  title: "Definite Integral Property",
+  image: "/mata37/definite_int/properties_of_definite_integral.webp",
+  section: sections.definite_int,
+  toLearn: true,
+  x: xInterval * 2,
+  y: yInterval * 1,
+  connectedTo: [definiteIntegral],
 }
 
 export const riemannIntegrable: Theorem = {
@@ -18,8 +28,8 @@ export const riemannIntegrable: Theorem = {
   image: "/mata37/definite_int/riemann_integrable.webp",
   section: sections.definite_int,
   toLearn: true,
-  x: xInterval * xFactor,
-  y: yInterval * 1,
+  x: xInterval * 3,
+  y: yInterval * 2,
   connectedTo: [definiteIntegral],
 }
 
